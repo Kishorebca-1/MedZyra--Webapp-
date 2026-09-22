@@ -8,6 +8,8 @@ const AUTH_ENDPOINTS = {
   verifyOtp: "/auth/verify-otp",
   register: "/auth/register"
 };
+const OTP_COOLDOWN_SECONDS = 60;
+let otpCooldownTimer = null;
 
 async function apiRequest(path, options = {}){
   const token = localStorage.getItem("medikiosk_token");
@@ -62,7 +64,39 @@ function toggleOtpControls(show){
   $("loginSubmitBtn").classList.toggle("hidden",!show);
   $("forgotBtn").classList.toggle("hidden",!show);
 }
+function setOtpCooldown(seconds = OTP_COOLDOWN_SECONDS){
+  const endsAt = Date.now() + Math.max(0, Number(seconds)) * 1000;
+  localStorage.setItem("medzyra_otp_cooldown_until", String(endsAt));
+  clearInterval(otpCooldownTimer);
+  const update = () => {
+    const remaining = Math.ceil((endsAt - Date.now()) / 1000);
+    const buttons = [$("sendOtpBtn"), $("forgotBtn")].filter(Boolean);
+    if (remaining <= 0) {
+      clearInterval(otpCooldownTimer);
+      localStorage.removeItem("medzyra_otp_cooldown_until");
+      buttons.forEach(button => {
+        button.disabled = false;
+        button.textContent = button.id === "forgotBtn" ? "Resend OTP" : "Send OTP";
+      });
+      return;
+    }
+    buttons.forEach(button => {
+      button.disabled = true;
+      button.textContent = `Wait ${remaining}s`;
+    });
+  };
+  update();
+  otpCooldownTimer = setInterval(update, 1000);
+}
+function restoreOtpCooldown(){
+  const endsAt = Number(localStorage.getItem("medzyra_otp_cooldown_until") || 0);
+  const remaining = Math.ceil((endsAt - Date.now()) / 1000);
+  if (remaining > 0) setOtpCooldown(remaining);
+  else localStorage.removeItem("medzyra_otp_cooldown_until");
+}
 async function sendOtp(identifier){
+  const sendButton = $("sendOtpBtn");
+  if (sendButton?.disabled) return false;
   try{
     const result=await apiRequest(AUTH_ENDPOINTS.sendOtp,{
       method:"POST",
@@ -70,10 +104,13 @@ async function sendOtp(identifier){
     });
     $("loginOtp").value="";
     toggleOtpControls(true);
+    setOtpCooldown();
     toast(result.message || "OTP sent successfully.");
     $("loginOtp").focus();
     return true;
   }catch(error){
+    const waitMatch = String(error.message || "").match(/wait\s+(\d+)\s+seconds?/i);
+    if (waitMatch) setOtpCooldown(Number(waitMatch[1]));
     toast(error.message || "Unable to send OTP.");
     return false;
   }
@@ -363,6 +400,7 @@ $("assistantBtn").onclick=()=>{ window.location.href="../Health Chat/health-chat
 $("addFamilyBtn").onclick=()=>toast("Family member module is ready for integration.");
 
 renderAllergySuggestions();
+restoreOtpCooldown();
 const cameFromRole = new URLSearchParams(window.location.search).get("from") === "role";
 if(currentUser && !cameFromRole)enterDashboard();
 else setAuthMode("login");
