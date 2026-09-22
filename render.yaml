@@ -16,5 +16,5 @@ services:
         sync: false
       - key: EMAIL_USER
         sync: false
-      - key: EMAIL_PASS
+      - key: EMAIL_APP_PASSWORD
         sync: false
