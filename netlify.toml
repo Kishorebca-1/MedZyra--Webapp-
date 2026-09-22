@@ -1,0 +1,12 @@
+[build]
+  publish = "public"
+
+[[redirects]]
+  from = "/health-chat"
+  to = "/Health%20Chat/health-chat.html"
+  status = 301
+
+[[redirects]]
+  from = "/documents"
+  to = "/Document/documents.html"
+  status = 301

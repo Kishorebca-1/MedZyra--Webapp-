@@ -1,0 +1,1758 @@
+/* =====================================================
+   MEDZYRA ROLE SELECTION
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #103f47;
+
+    background: #f7fffd;
+
+    overflow-x: hidden;
+}
+
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.top-header {
+
+    height: 92px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5.3%;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border-bottom:
+        1px solid rgba(31, 157, 151, 0.12);
+
+    position: relative;
+
+    z-index: 20;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.brand-name {
+
+    font-size: 29px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    color: #123f48;
+}
+
+
+/* =====================================================
+   MEDICAL LOGO
+   ===================================================== */
+
+.brand-icon {
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #079b91,
+            #18b9a9
+        );
+
+    position: relative;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 160, 150, 0.18);
+
+    overflow: hidden;
+}
+
+
+.plus-horizontal {
+
+    position: absolute;
+
+    width: 34px;
+    height: 9px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    left: 10px;
+    top: 22px;
+}
+
+
+.plus-vertical {
+
+    position: absolute;
+
+    width: 9px;
+    height: 34px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    left: 22px;
+    top: 10px;
+}
+
+
+.heartbeat {
+
+    position: absolute;
+
+    left: 11px;
+    top: 18px;
+
+    color: #0a9c91;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    transform: rotate(-3deg);
+}
+
+
+.header-tagline {
+
+    color: #607d84;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+
+/* =====================================================
+   MAIN PAGE
+   ===================================================== */
+
+.role-page {
+
+    min-height:
+        calc(100vh - 92px);
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding:
+        38px 20px 80px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(210, 249, 242, 0.48),
+            transparent 43%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f9fffe 0%,
+            #f2fcfa 100%
+        );
+}
+
+
+
+/* =====================================================
+   CONTENT
+   ===================================================== */
+
+.role-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+
+/* =====================================================
+   WELCOME PILL
+   ===================================================== */
+
+.welcome-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        9px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border:
+        1px solid #cfeee9;
+
+    color: #07978f;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 18px
+        rgba(22, 145, 137, 0.08);
+
+    margin-bottom: 20px;
+
+    animation:
+        fadeDown 0.7s ease;
+}
+
+
+.sparkle {
+
+    font-size: 17px;
+
+    animation:
+        sparkleAnimation 2s
+        infinite ease-in-out;
+}
+
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.role-container h1 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(45px, 5vw, 67px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 600;
+
+    color: #0b3943;
+
+    margin-bottom: 16px;
+
+    animation:
+        fadeUp 0.7s ease;
+}
+
+
+.role-container h1 span {
+
+    color: #079a91;
+
+    font-style: italic;
+}
+
+
+
+/* =====================================================
+   SUBTITLE
+   ===================================================== */
+
+.subtitle {
+
+    color: #617b82;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 38px;
+
+    animation:
+        fadeUp 0.9s ease;
+}
+
+
+
+/* =====================================================
+   ROLE OPTIONS
+   ===================================================== */
+
+.role-options {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+    animation:
+        cardsAppear 1s ease;
+}
+
+
+
+/* =====================================================
+   ROLE CARD
+   ===================================================== */
+
+.role-card {
+
+    height: 395px;
+
+    border:
+        2px solid #cde5e2;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.48);
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding:
+        28px 35px;
+
+    color: #123f48;
+
+    transition:
+
+        transform 0.28s ease,
+
+        border-color 0.28s ease,
+
+        background 0.28s ease,
+
+        box-shadow 0.28s ease;
+}
+
+
+.role-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        #80ccc5;
+
+    background:
+        rgba(239, 253, 250, 0.85);
+
+    box-shadow:
+        0 17px 40px
+        rgba(20, 145, 136, 0.12);
+}
+
+
+.role-card:active {
+
+    transform:
+        scale(0.98);
+}
+
+
+
+/* =====================================================
+   ILLUSTRATIONS
+   ===================================================== */
+
+.illustration {
+
+    width: 190px;
+
+    height: 150px;
+
+    position: relative;
+
+    margin-bottom: 13px;
+}
+
+
+
+/* =====================================================
+   PATIENT ILLUSTRATION
+   ===================================================== */
+
+.patient {
+
+    position: relative;
+}
+
+
+.person-head {
+
+    position: absolute;
+
+    width: 65px;
+    height: 70px;
+
+    left: 62px;
+    top: 9px;
+
+    z-index: 3;
+}
+
+
+.face {
+
+    width: 61px;
+    height: 67px;
+
+    background: #f5c4a7;
+
+    border-radius:
+        48% 48% 45% 45%;
+
+    position: absolute;
+
+    left: 2px;
+    top: 7px;
+}
+
+
+.hair {
+
+    position: absolute;
+
+    width: 69px;
+    height: 73px;
+
+    background: #173d45;
+
+    border-radius:
+        50% 50% 40% 45%;
+
+    left: -2px;
+    top: 0;
+
+    z-index: -1;
+}
+
+
+.hair::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 58px;
+
+    background: #173d45;
+
+    right: -7px;
+    top: 28px;
+
+    border-radius:
+        0 0 50% 50%;
+}
+
+
+.eye {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #173f47;
+
+    border-radius: 50%;
+
+    top: 29px;
+}
+
+
+.eye.left {
+    left: 17px;
+}
+
+
+.eye.right {
+    right: 17px;
+}
+
+
+.smile {
+
+    position: absolute;
+
+    width: 17px;
+    height: 8px;
+
+    border-bottom:
+        2px solid #9b554c;
+
+    border-radius: 0 0 50% 50%;
+
+    left: 22px;
+    top: 42px;
+}
+
+
+.person-body {
+
+    position: absolute;
+
+    width: 130px;
+    height: 80px;
+
+    left: 30px;
+    top: 72px;
+}
+
+
+.shirt {
+
+    width: 130px;
+    height: 85px;
+
+    background:
+        #92dcd2;
+
+    border-radius:
+        48px 48px 0 0;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.neck {
+
+    position: absolute;
+
+    width: 22px;
+    height: 20px;
+
+    background: #f5c4a7;
+
+    left: 54px;
+    top: -8px;
+
+    z-index: 2;
+}
+
+
+.shirt-dot {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(10, 122, 116, 0.3);
+}
+
+
+.dot1 {
+    left: 35px;
+    top: 32px;
+}
+
+
+.dot2 {
+    left: 70px;
+    top: 49px;
+}
+
+
+.dot3 {
+    left: 95px;
+    top: 25px;
+}
+
+
+.medical-plus {
+
+    position: absolute;
+
+    right: 8px;
+    top: 54px;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    background:
+        #0ba99f;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 5;
+
+    box-shadow:
+        0 5px 12px
+        rgba(8, 160, 150, 0.2);
+}
+
+
+
+/* =====================================================
+   DOCTOR ILLUSTRATION
+   ===================================================== */
+
+.doctor-head {
+
+    position: absolute;
+
+    width: 67px;
+    height: 75px;
+
+    left: 61px;
+    top: 6px;
+
+    z-index: 3;
+}
+
+
+.doctor-face {
+
+    position: absolute;
+
+    width: 60px;
+    height: 67px;
+
+    left: 3px;
+    top: 9px;
+
+    background:
+        #f1c09e;
+
+    border-radius:
+        48% 48% 45% 45%;
+}
+
+
+.doctor-hair {
+
+    position: absolute;
+
+    width: 68px;
+    height: 42px;
+
+    background:
+        #193d45;
+
+    border-radius:
+        55% 55% 25% 20%;
+
+    left: 0;
+    top: 0;
+}
+
+
+.doctor-hair::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 17px;
+    height: 35px;
+
+    background:
+        #193d45;
+
+    right: -3px;
+    top: 19px;
+
+    border-radius: 0 50% 30% 30%;
+}
+
+
+.doctor-eye {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #163b43;
+
+    border-radius: 50%;
+
+    top: 31px;
+}
+
+
+.doctor-eye.left {
+    left: 15px;
+}
+
+
+.doctor-eye.right {
+    right: 15px;
+}
+
+
+.doctor-smile {
+
+    position: absolute;
+
+    width: 16px;
+    height: 8px;
+
+    border-bottom:
+        2px solid #9b554c;
+
+    border-radius:
+        0 0 50% 50%;
+
+    left: 22px;
+    top: 43px;
+}
+
+
+/* Glasses */
+
+.glasses {
+
+    position: absolute;
+
+    width: 22px;
+    height: 15px;
+
+    border:
+        2px solid #17424a;
+
+    border-radius: 5px;
+
+    top: 27px;
+
+    z-index: 5;
+}
+
+
+.glasses-left {
+    left: 1px;
+}
+
+
+.glasses-right {
+    right: 1px;
+}
+
+
+.glasses-left::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 2px;
+
+    background: #17424a;
+
+    left: 19px;
+    top: 4px;
+}
+
+
+.doctor-body {
+
+    position: absolute;
+
+    width: 140px;
+    height: 85px;
+
+    left: 25px;
+    top: 70px;
+}
+
+
+.doctor-coat {
+
+    width: 140px;
+    height: 90px;
+
+    background: white;
+
+    border:
+        1px solid #c9e5e2;
+
+    border-radius:
+        42px 42px 0 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 -2px 0
+        rgba(16, 120, 115, 0.08);
+}
+
+
+.shirt-line {
+
+    position: absolute;
+
+    width: 34px;
+    height: 75px;
+
+    background:
+        #d9f2ee;
+
+    left: 53px;
+    top: 0;
+
+    transform:
+        skewX(-9deg);
+}
+
+
+.stethoscope {
+
+    position: absolute;
+
+    left: 35px;
+    top: 4px;
+
+    width: 60px;
+    height: 72px;
+}
+
+
+.tube {
+
+    position: absolute;
+
+    width: 44px;
+    height: 50px;
+
+    border:
+        3px solid #0d7e7a;
+
+    border-top: none;
+
+    border-radius:
+        0 0 25px 25px;
+
+    left: 7px;
+    top: -5px;
+}
+
+
+.chest-piece {
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background:
+        #0b9991;
+
+    bottom: 2px;
+    left: 21px;
+
+    border:
+        3px solid white;
+
+    box-shadow:
+        0 0 0 2px #0b9991;
+}
+
+
+.doctor-badge {
+
+    position: absolute;
+
+    right: 14px;
+    top: 20px;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background:
+        #0ba99f;
+
+    color: white;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.doctor-medical-plus {
+
+    position: absolute;
+
+    right: 1px;
+    top: 46px;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    background:
+        #0ba99f;
+
+    color: white;
+
+    font-size: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 5px 12px
+        rgba(8, 160, 150, 0.2);
+}
+
+
+
+/* =====================================================
+   CARD TEXT
+   ===================================================== */
+
+.role-card h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 600;
+
+    color: #0d3e48;
+
+    margin-bottom: 10px;
+}
+
+
+.role-card p {
+
+    color: #638089;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    max-width: 350px;
+}
+
+
+
+/* =====================================================
+   ARROW
+   ===================================================== */
+
+.role-arrow {
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background:
+        #c8eee8;
+
+    color: #087f7a;
+
+    font-size: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 18px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.role-card:hover .role-arrow {
+
+    transform:
+        translateX(5px);
+
+    background:
+        #aee4dc;
+}
+
+
+
+/* =====================================================
+   DECORATIVE PLUS
+   ===================================================== */
+
+.decor-plus {
+
+    position: absolute;
+
+    left: 7%;
+    top: 70px;
+
+    color:
+        rgba(48, 190, 175, 0.11);
+
+    font-size: 80px;
+
+    font-weight: 300;
+
+    z-index: 1;
+}
+
+
+
+/* =====================================================
+   DECORATIVE HEART
+   ===================================================== */
+
+.decor-heart {
+
+    position: absolute;
+
+    right: 7%;
+    top: 70px;
+
+    color:
+        rgba(35, 176, 163, 0.16);
+
+    font-size: 105px;
+
+    line-height: 1;
+
+    z-index: 1;
+}
+
+
+.decor-heart span {
+
+    position: absolute;
+
+    font-size: 70px;
+
+    left: 19px;
+    top: 22px;
+
+    transform:
+        rotate(-5deg);
+
+    color:
+        rgba(35, 176, 163, 0.18);
+}
+
+
+
+/* =====================================================
+   CIRCLES
+   ===================================================== */
+
+.decor-circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(68, 196, 183, 0.06);
+}
+
+
+.circle-left {
+
+    width: 250px;
+    height: 250px;
+
+    left: -145px;
+    top: 130px;
+}
+
+
+.circle-right {
+
+    width: 270px;
+    height: 270px;
+
+    right: -155px;
+    top: 170px;
+}
+
+
+
+/* =====================================================
+   LEAVES
+   ===================================================== */
+
+.leaf-decoration {
+
+    position: absolute;
+
+    bottom: -25px;
+
+    width: 190px;
+    height: 230px;
+
+    z-index: 2;
+
+    opacity: 0.75;
+}
+
+
+.left-leaves {
+    left: 0;
+}
+
+
+.right-leaves {
+
+    right: 0;
+
+    transform:
+        scaleX(-1);
+}
+
+
+.leaf {
+
+    position: absolute;
+
+    display: block;
+
+    width: 45px;
+    height: 90px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            140deg,
+            rgba(55, 183, 170, 0.25),
+            rgba(22, 147, 139, 0.65)
+        );
+
+    transform-origin:
+        bottom center;
+}
+
+
+.leaf-1 {
+
+    bottom: 0;
+    left: 35px;
+
+    height: 135px;
+
+    transform:
+        rotate(-27deg);
+}
+
+
+.leaf-2 {
+
+    bottom: 25px;
+    left: 5px;
+
+    height: 105px;
+
+    transform:
+        rotate(-53deg);
+}
+
+
+.leaf-3 {
+
+    bottom: 20px;
+    left: 83px;
+
+    height: 105px;
+
+    transform:
+        rotate(22deg);
+}
+
+
+.leaf-4 {
+
+    bottom: 80px;
+    left: 50px;
+
+    height: 85px;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+.leaf-5 {
+
+    bottom: 105px;
+    left: 105px;
+
+    height: 65px;
+
+    transform:
+        rotate(35deg);
+
+    opacity: 0.45;
+}
+
+
+
+/* =====================================================
+   QUOTE
+   ===================================================== */
+
+.health-quote {
+
+    position: absolute;
+
+    right: 8%;
+
+    bottom: 42px;
+
+    color: #079b92;
+
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
+
+    font-size: 20px;
+
+    transform:
+        rotate(-7deg);
+
+    text-align: left;
+
+    z-index: 4;
+}
+
+
+.health-quote span {
+
+    display: block;
+}
+
+
+.health-quote span:last-child {
+
+    margin-left: 24px;
+}
+
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes cardsAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes sparkleAnimation {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.25)
+            rotate(10deg);
+    }
+}
+
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .top-header {
+        padding:
+            0 30px;
+    }
+
+
+    .role-options {
+        gap: 18px;
+    }
+
+
+    .role-card {
+        padding:
+            25px 20px;
+    }
+}
+
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .top-header {
+
+        height: 75px;
+
+        padding:
+            0 20px;
+    }
+
+
+    .brand {
+
+        gap: 10px;
+    }
+
+
+    .brand-icon {
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .plus-horizontal {
+
+        width: 27px;
+        height: 7px;
+
+        left: 8px;
+        top: 17px;
+    }
+
+
+    .plus-vertical {
+
+        width: 7px;
+        height: 27px;
+
+        left: 17px;
+        top: 8px;
+    }
+
+
+    .heartbeat {
+
+        left: 8px;
+        top: 14px;
+
+        font-size: 18px;
+    }
+
+
+    .brand-name {
+
+        font-size: 22px;
+    }
+
+
+    .header-tagline {
+        display: none;
+    }
+
+
+
+    .role-page {
+
+        min-height:
+            calc(100vh - 75px);
+
+        padding:
+            38px 15px 65px;
+    }
+
+
+
+    .welcome-pill {
+
+        font-size: 13px;
+
+        padding:
+            8px 15px;
+    }
+
+
+
+    .role-container h1 {
+
+        font-size: 42px;
+
+        letter-spacing:
+            -1.5px;
+    }
+
+
+
+    .subtitle {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        margin-bottom: 30px;
+    }
+
+
+
+    /* Keep cards side by side */
+
+    .role-options {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+
+
+    .role-card {
+
+        height: 330px;
+
+        padding:
+            17px 7px;
+
+        border-radius:
+            12px;
+    }
+
+
+
+    .illustration {
+
+        width: 125px;
+
+        height: 105px;
+
+        transform:
+            scale(0.75);
+
+        transform-origin:
+            center top;
+
+        margin-bottom:
+            -5px;
+    }
+
+
+
+    .role-card h2 {
+
+        font-size: 17px;
+
+        margin-bottom: 8px;
+    }
+
+
+
+    .role-card p {
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+        max-width: 145px;
+    }
+
+
+
+    .role-arrow {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+
+        margin-top: 13px;
+    }
+
+
+
+    .decor-plus {
+
+        left: 1%;
+
+        top: 45px;
+
+        font-size: 55px;
+    }
+
+
+
+    .decor-heart {
+
+        right: -5px;
+
+        top: 65px;
+
+        font-size: 70px;
+    }
+
+
+
+    .decor-heart span {
+
+        font-size: 48px;
+
+        left: 12px;
+        top: 14px;
+    }
+
+
+
+    .health-quote {
+
+        right: 18px;
+
+        bottom: 20px;
+
+        font-size: 14px;
+    }
+
+
+
+    .leaf-decoration {
+
+        transform:
+            scale(0.55);
+
+        transform-origin:
+            bottom left;
+    }
+
+
+
+    .right-leaves {
+
+        transform:
+            scaleX(-1)
+            scale(0.55);
+    }
+}
+
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .role-container h1 {
+
+        font-size: 36px;
+    }
+
+
+    .subtitle {
+
+        font-size: 14px;
+    }
+
+
+    .role-options {
+
+        gap: 6px;
+    }
+
+
+    .role-card {
+
+        height: 310px;
+
+        padding:
+            15px 5px;
+    }
+
+
+    .role-card h2 {
+
+        font-size: 15px;
+    }
+
+
+    .role-card p {
+
+        font-size: 10px;
+    }
+
+
+    .role-arrow {
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 19px;
+    }
+
+
+    .health-quote {
+
+        display: none;
+    }
+}

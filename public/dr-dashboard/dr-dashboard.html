@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedZyra | Doctor Dashboard</title>
+    <link rel="stylesheet" href="../CSS/dr-dashboard.css">
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar">
+            <a class="brand" href="dr-dashboard.html"><span>+</span> MedZyra</a>
+            <p class="sidebar-label">WORKSPACE</p>
+            <nav class="nav-list" aria-label="Main navigation">
+                <a class="nav-item active" href="#overview"><span class="nav-icon">▦</span> Overview</a>
+                <a class="nav-item" href="#appointments"><span class="nav-icon">◷</span> Appointments <b>4</b></a>
+                <a class="nav-item" href="#patients"><span class="nav-icon">♧</span> Patients</a>
+                <a class="nav-item" href="#schedule"><span class="nav-icon">□</span> My Schedule</a>
+                <a class="nav-item" href="#messages"><span class="nav-icon">◇</span> Messages <b class="message-count">2</b></a>
+            </nav>
+            <p class="sidebar-label settings-label">ACCOUNT</p>
+            <nav class="nav-list">
+                <a class="nav-item" href="#profile"><span class="nav-icon">◎</span> Profile</a>
+                <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="help-mark">?</div>
+                <div><strong>Need help?</strong><small>Visit our support center</small></div>
+                <span class="arrow">›</span>
+            </div>
+            <a class="logout" href="../dr dashbord/dr.html"><span>↪</span> Sign out</a>
+        </aside>
+
+        <main class="main-content" id="overview">
+            <header class="topbar">
+                <div class="mobile-brand"><span>+</span> MedZyra</div>
+                <div class="breadcrumb">Workspace <span>/</span> Overview</div>
+                <div class="top-actions">
+                    <button class="icon-button" aria-label="Notifications"><span class="notification-dot"></span>♧</button>
+                    <div class="top-divider"></div>
+                    <div class="user-menu">
+                        <div class="avatar" id="headerAvatar">DR</div>
+                        <div class="user-copy"><strong id="headerName">Dr. Ananya Sen</strong><small id="headerSpecialty">General Physician</small></div>
+                        <span class="chevron">⌄</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrap">
+                <section class="welcome-row" data-page="overview">
+                    <div><p class="eyebrow">WEDNESDAY, 16 SEPTEMBER 2026</p><h1>Good morning, <span id="welcomeName">Dr. Ananya</span></h1><p class="muted">Here is what is happening with your practice today.</p></div>
+                    <button class="primary-button" id="newAppointment"><span>+</span> New appointment</button>
+                </section>
+
+                <section class="stats-grid" data-page="overview" aria-label="Practice summary">
+                    <article class="stat-card"><div class="stat-top"><span class="stat-label">TODAY'S APPOINTMENTS</span><span class="stat-icon teal">◷</span></div><strong>08</strong><p><span class="positive">↑ 12%</span> vs last week</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-label">TOTAL PATIENTS</span><span class="stat-icon blue">♧</span></div><strong>1,284</strong><p><span class="positive">↑ 8.4%</span> this month</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-label">PENDING REVIEWS</span><span class="stat-icon amber">✦</span></div><strong>06</strong><p><span class="neutral">Requires attention</span></p></article>
+                </section>
+
+                <section class="dashboard-grid" data-page-container>
+                    <article class="panel appointments-panel" id="appointments" data-page="appointments">
+                        <div class="panel-heading"><div><h2>Today's appointments</h2><p class="muted">Wednesday, 16 September</p></div><a href="#schedule" class="text-link">View calendar <span>→</span></a></div>
+                        <div class="appointment-list">
+                            <div class="appointment"><time>09:00<br><small>AM</small></time><div class="time-line"></div><div class="patient-avatar lavender">RS</div><div class="appointment-info"><strong>Riya Sharma</strong><span>Follow-up consultation · Video</span></div><span class="status confirmed">Confirmed</span><button class="more-button" aria-label="More options">•••</button></div>
+                            <div class="appointment"><time>10:30<br><small>AM</small></time><div class="time-line"></div><div class="patient-avatar peach">AK</div><div class="appointment-info"><strong>Arjun Kapoor</strong><span>General consultation · In clinic</span></div><span class="status waiting">Waiting</span><button class="more-button" aria-label="More options">•••</button></div>
+                            <div class="appointment current"><time>12:00<br><small>PM</small></time><div class="time-line"></div><div class="patient-avatar mint">MP</div><div class="appointment-info"><strong>Meera Patel</strong><span>Diabetes review · Video</span></div><span class="status confirmed">Confirmed</span><button class="more-button" aria-label="More options">•••</button></div>
+                            <div class="appointment"><time>02:30<br><small>PM</small></time><div class="time-line"></div><div class="patient-avatar gold">VN</div><div class="appointment-info"><strong>Vikram Nair</strong><span>Routine check-up · In clinic</span></div><span class="status pending">Pending</span><button class="more-button" aria-label="More options">•••</button></div>
+                        </div>
+                    </article>
+
+                    <article class="panel schedule-panel" id="schedule" data-page="schedule">
+                        <div class="panel-heading"><div><h2>Schedule</h2><p class="muted">Your availability this week</p></div><button class="more-button" aria-label="Schedule options">•••</button></div>
+                        <div class="schedule-summary"><div><strong>24</strong><span>appointments</span></div><div><strong>32h</strong><span>available</span></div><div><strong>78%</strong><span>booked</span></div></div>
+                        <div class="week"><span class="day"><small>MON</small>14</span><span class="day"><small>TUE</small>15</span><span class="day selected"><small>WED</small>16</span><span class="day"><small>THU</small>17</span><span class="day"><small>FRI</small>18</span><span class="day"><small>SAT</small>19</span></div>
+                        <div class="availability"><span class="availability-dot"></span><div><strong>Available today</strong><small>09:00 AM - 05:00 PM</small></div><span class="availability-arrow">→</span></div>
+                    </article>
+                </section>
+
+                <section class="bottom-grid" data-page-container>
+                    <article class="panel patients-panel" id="patients" data-page="patients"><div class="panel-heading"><div><h2>Recent patients</h2><p class="muted">Your latest patient activity</p></div><a href="#patients" class="text-link">View all <span>→</span></a></div><div class="patient-table"><div class="table-row table-header"><span>Patient</span><span>Last visit</span><span>Condition</span><span>Status</span></div><div class="table-row"><span class="patient-name"><i class="patient-avatar lavender">RS</i> Riya Sharma</span><span>Today, 09:00 AM</span><span>Hypertension</span><span class="status stable">Stable</span></div><div class="table-row"><span class="patient-name"><i class="patient-avatar peach">AK</i> Arjun Kapoor</span><span>Today, 10:30 AM</span><span>Fever & cold</span><span class="status review">Review</span></div><div class="table-row"><span class="patient-name"><i class="patient-avatar mint">MP</i> Meera Patel</span><span>Yesterday, 04:15 PM</span><span>Type 2 Diabetes</span><span class="status stable">Stable</span></div></div></article>
+                    <article class="panel activity-panel" id="messages" data-page="messages"><div class="panel-heading"><div><h2>Quick activity</h2><p class="muted">Recent updates</p></div></div><div class="activity-item"><span class="activity-icon green">✓</span><div><strong>Consultation completed</strong><p>Riya Sharma · 08:42 AM</p></div></div><div class="activity-item"><span class="activity-icon blue">✉</span><div><strong>New message received</strong><p>From Meera Patel · 08:15 AM</p></div></div><div class="activity-item"><span class="activity-icon amber">▣</span><div><strong>Prescription reminder</strong><p>3 patients need a follow-up</p></div></div></article>
+                </section>
+
+                <section class="account-grid" data-page-container>
+                    <article class="panel account-panel" id="profile" data-page="profile"><div class="panel-heading"><div><h2>My profile</h2><p class="muted">Your professional profile details</p></div><button class="outline-button">Edit profile</button></div><div class="profile-details"><div class="profile-avatar" id="profileAvatar">DR</div><div><strong id="profileName">Dr. Ananya Sen</strong><p id="profileSpecialty">General Physician</p><span id="profileClinic">MedZyra Care Clinic</span></div></div></article>
+                    <article class="panel account-panel" id="settings" data-page="settings"><div class="panel-heading"><div><h2>Settings</h2><p class="muted">Manage your workspace preferences</p></div></div><div class="setting-row"><div><strong>Appointment reminders</strong><p>Receive reminders before consultations</p></div><button class="toggle active" aria-label="Appointment reminders enabled"><span></span></button></div><div class="setting-row"><div><strong>Available for video calls</strong><p>Show video consultation availability</p></div><button class="toggle active" aria-label="Video calls enabled"><span></span></button></div></article>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div class="toast" id="toast" role="status">New appointment form is ready to connect.</div>
+    <script src="../JS/dr-dashboard.js"></script>
+</body>
+</html>

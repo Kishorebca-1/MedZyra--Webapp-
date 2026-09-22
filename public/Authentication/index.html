@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedZyra — Your Complete Health Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <!-- AUTH -->
+  <main id="authScreen" class="auth-screen">
+    <section class="auth-card">
+      <div class="auth-left">
+        <div class="brand">
+          <div class="brand-mark"><span>+</span></div>
+          <div>
+            <strong>MedZyra</strong>
+            <small>Your Health, Our Priority</small>
+          </div>
+        </div>
+
+        <div class="auth-heading">
+          <span class="eyebrow">SECURE HEALTH PLATFORM</span>
+          <h1 id="authTitle">Welcome back.</h1>
+          <p id="authSubtitle">Sign in to continue your complete health journey.</p>
+        </div>
+
+        <!-- LOGIN -->
+        <form id="loginForm" class="auth-form">
+          <label>Email or Phone
+            <input id="loginIdentifier" type="text" placeholder="Enter email or phone" required>
+          </label>
+          <div class="form-row between">
+            <label class="check"><input type="checkbox" id="rememberMe"> <span>Remember me</span></label>
+            <button type="button" class="text-btn hidden" id="forgotBtn">Resend OTP</button>
+          </div>
+          <div id="otpSection" class="hidden">
+            <label>OTP
+              <input
+    type="text"
+    id="loginOtp"
+    placeholder="Enter OTP"
+    maxlength="6"
+    inputmode="numeric"
+    autocomplete="one-time-code"
+/>
+            </label>
+          </div>
+          <button class="primary-btn hidden" id="loginSubmitBtn" type="submit">Login with OTP <span>→</span></button>
+          <button type="button" class="primary-btn secondary-btn" id="sendOtpBtn" style="margin-top:12px;">Send OTP</button>
+          <p class="switch-text">Don't have an account? <button type="button" class="link-btn" id="showRegister">Create an account</button></p>
+        </form>
+
+        <!-- REGISTER -->
+        <form id="registerForm" class="auth-form hidden">
+          <div class="progress"><div id="regProgress" class="progress-fill"></div></div>
+          <div class="step-label">Step <span id="stepNumber">1</span> of 2</div>
+
+          <div id="step1">
+            <div class="form-grid">
+              <label>Full Name
+                <input id="fullName" type="text" placeholder="Enter your full name" required>
+              </label>
+              <label>Phone Number
+                <input id="phone" type="tel" placeholder="+91 98765 43210" required>
+              </label>
+              <label>Email
+                <input id="email" type="email" placeholder="you@example.com" required>
+              </label>
+              <label>Date of Birth
+                <input id="dob" type="date" required>
+              </label>
+              <label>Gender
+                <select id="gender" required>
+                  <option value="">Select</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option>
+                </select>
+              </label>
+              <label>Blood Group
+                <select id="bloodGroup" required>
+                  <option value="">Select</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                  <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option><option>Unknown</option>
+                </select>
+              </label>
+              <label>City
+                <input id="city" type="text" placeholder="Enter your city" required>
+              </label>
+              <label>Emergency Contact
+                <input id="emergency" type="tel" placeholder="Emergency phone number" required>
+              </label>
+            </div>
+            <label class="check terms"><input id="terms" type="checkbox" required> <span>I agree to the Terms & Conditions and Privacy Policy.</span></label>
+            <button type="button" class="primary-btn" id="nextStep">Continue <span>→</span></button>
+          </div>
+
+          <div id="step2" class="hidden">
+            <div class="form-grid">
+              <label>Height (cm)
+                <input id="height" type="number" min="30" max="250" placeholder="e.g. 165">
+              </label>
+              <label>Body Weight (kg)
+                <input id="weight" type="number" min="2" max="400" step="0.1" placeholder="e.g. 60">
+              </label>
+            </div>
+
+            <label>Allergies
+              <textarea id="allergies" rows="3" placeholder="List medicines, foods or other allergies. Write 'None' if not applicable."></textarea>
+            </label>
+
+            <div style="margin-top:10px;">
+              <div style="font-size:12px;font-weight:600;color:#536b8b;margin-bottom:8px;">Popular Allergies</div>
+              <div id="allergySuggestions" style="max-height:160px; overflow-y:auto; border:1px solid #dbe7f3; border-radius:12px; padding:8px; background:#f8fbff; display:flex; flex-wrap:wrap; gap:8px;"></div>
+            </div>
+
+            <div class="section-label">Lifestyle Habits</div>
+            <div class="habit-grid">
+              <label class="select-card">Smoking
+                <select id="smoking"><option>Never</option><option>Occasionally</option><option>Regularly</option><option>Quit</option></select>
+              </label>
+              <label class="select-card">Drinking
+                <select id="drinking"><option>Never</option><option>Occasionally</option><option>Regularly</option><option>Quit</option></select>
+              </label>
+              <label class="select-card">Exercise
+                <select id="exercise"><option>Daily</option><option>3–5 days/week</option><option>1–2 days/week</option><option>Rarely</option><option>Never</option></select>
+              </label>
+            </div>
+
+            <label>Chronic Conditions
+              <textarea id="chronic" rows="3" placeholder="Diabetes, hypertension, asthma, etc. Write 'None' if not applicable."></textarea>
+            </label>
+
+            <div class="button-row">
+              <button type="button" class="secondary-btn" id="backStep">← Back</button>
+              <button type="submit" class="primary-btn">Create Account <span>✓</span></button>
+            </div>
+          </div>
+          <p class="switch-text">Already have an account? <button type="button" class="link-btn" id="showLogin">Login</button></p>
+        </form>
+      </div>
+
+      <div class="auth-right">
+        <div class="hero-orb">
+          <div class="shield">✚</div>
+          <div class="doctor-icon">♙</div>
+        </div>
+        <h2>Your health,<br><span>all in one place.</span></h2>
+        <p>Store your medical history, documents, appointments and health information securely.</p>
+        <div class="feature-list">
+          <div><b>✓</b> AI-ready clinical history</div>
+          <div><b>✓</b> Secure health records</div>
+          <div><b>✓</b> Easy doctor access</div>
+        </div>
+        <div class="privacy-note">🔒 Your data is protected with secure practices.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- DASHBOARD -->
+  <main id="dashboardScreen" class="dashboard hidden">
+    <aside class="sidebar">
+      <div class="brand sidebar-brand">
+        <div class="brand-mark"><span>+</span></div>
+        <div><strong>MedZyra</strong><small>Your Health, Our Priority</small></div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="home">⌂ <span>Home</span></button>
+        <button class="nav-item" data-view="health">♡ <span>My Health</span></button>
+        <button class="nav-item" data-view="appointments">▣ <span>Appointments</span></button>
+        <button class="nav-item" data-view="documents">▤ <span>Documents</span></button>
+        <button class="nav-item" data-view="medicine">♧ <span>Medicine Tracker</span></button>
+        <button class="nav-item" data-view="family">♧ <span>Family Health</span></button>
+        <button class="nav-item" data-view="settings">⚙ <span>Settings</span></button>
+      </nav>
+      <button class="assistant-card" id="assistantBtn"><b>◉</b><span>Need help?<small>Chat with our AI assistant</small></span></button>
+      <button class="logout-btn" id="logoutBtn">↪ Log out</button>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <div class="search">⌕ <input id="globalSearch" placeholder="Search your health records..."></div>
+        <div class="profile" id="profileBtn"><div class="avatar" id="avatar">U</div><span id="userNameTop">User</span>⌄</div>
+      </header>
+
+      <div id="viewHome" class="view">
+        <section class="welcome-banner">
+          <div>
+            <span class="eyebrow">WELCOME BACK</span>
+            <h1>Your complete health journey,<br>in one place.</h1>
+            <p>Talk. Upload. Share. Get better.</p>
+            <button class="primary-btn small" data-route="../Health Chat/health-chat.html">View My Health →</button>
+          </div>
+          <div class="health-illustration"><div class="floating-card">♥</div><div class="person">♙</div><div class="shield">✚</div></div>
+        </section>
+
+        <div class="feature-strip">
+          <div><i>◉</i><b>AI Clinical<br>History</b></div>
+          <div><i>▧</i><b>Document<br>Digitization</b></div>
+          <div><i>◷</i><b>Health<br>Timeline</b></div>
+          <div><i>♢</i><b>Secure &<br>Consent Based</b></div>
+        </div>
+
+        <h2 class="section-title">Quick Actions</h2>
+        <div class="action-grid">
+          <button class="action-card" data-view-jump="appointments"><span>▣</span><b>Book Appointment</b><small>Find and schedule a doctor</small></button>
+          <button class="action-card" data-view-jump="documents"><span>▤</span><b>Upload Document</b><small>Save prescriptions and reports</small></button>
+          <button class="action-card" data-view-jump="medicine"><span>◷</span><b>Medicine Tracker</b><small>Manage your medicines</small></button>
+          <button class="action-card" data-view-jump="health"><span>♡</span><b>View Health</b><small>Check your health profile</small></button>
+        </div>
+      </div>
+
+      <div id="viewHealth" class="view hidden">
+        <div class="page-heading"><span class="eyebrow">MY HEALTH</span><h1>Health Profile</h1><p>Your personal health information at a glance.</p></div>
+        <div class="stats-grid">
+          <div class="stat"><small>Blood Group</small><strong id="healthBlood">—</strong></div>
+          <div class="stat"><small>Age</small><strong id="healthAge">—</strong></div>
+          <div class="stat"><small>Height</small><strong id="healthHeight">—</strong></div>
+          <div class="stat"><small>Weight</small><strong id="healthWeight">—</strong></div>
+        </div>
+        <div class="health-grid">
+          <div class="panel"><h3>Basic Information</h3><div id="basicInfo" class="info-list"></div></div>
+          <div class="panel"><h3>Medical Information</h3><div id="medicalInfo" class="info-list"></div></div>
+          <div class="panel"><h3>Lifestyle</h3><div id="lifestyleInfo" class="info-list"></div></div>
+          <div class="panel emergency-panel"><h3>Emergency Contact</h3><div id="emergencyInfo" class="info-list"></div></div>
+        </div>
+      </div>
+
+      <div id="viewAppointments" class="view hidden">
+        <div class="page-heading"><span class="eyebrow">CARE</span><h1>Appointments</h1><p>Book and manage your doctor visits.</p></div>
+        <div class="panel">
+          <div class="appointment-form">
+            <label>Department<select id="apptDept"><option>General Medicine</option><option>Cardiology</option><option>Orthopaedics</option><option>Pediatrics</option><option>Dermatology</option><option>ENT</option></select></label>
+            <label>Date<input id="apptDate" type="date"></label>
+            <label>Preferred Time<input id="apptTime" type="time"></label>
+            <button class="primary-btn" id="bookBtn">Book Appointment</button>
+          </div>
+          <div class="divider"></div>
+          <h3>Upcoming Appointments</h3>
+          <div id="appointmentList" class="list"></div>
+        </div>
+      </div>
+
+      <div id="viewDocuments" class="view hidden">
+        <div class="page-heading"><span class="eyebrow">RECORDS</span><h1>Documents</h1><p>Keep prescriptions, reports and medical records organized.</p></div>
+        <div class="panel upload-panel">
+          <label class="upload-box" for="docInput"><span>＋</span><b>Upload medical document</b><small>PDF, JPG or PNG</small></label>
+          <input id="docInput" type="file" accept=".pdf,.jpg,.jpeg,.png">
+          <div id="documentList" class="list"></div>
+        </div>
+      </div>
+
+      <div id="viewMedicine" class="view hidden">
+        <div class="page-heading"><span class="eyebrow">MEDICATION</span><h1>Medicine Tracker</h1><p>Track your medicines and never miss a dose.</p></div>
+        <div class="panel">
+          <div class="appointment-form">
+            <label>Medicine Name<input id="medName" placeholder="e.g. Paracetamol"></label>
+            <label>Dosage<input id="medDose" placeholder="e.g. 500 mg"></label>
+            <label>Time<input id="medTime" type="time"></label>
+            <button class="primary-btn" id="addMedBtn">Add Medicine</button>
+          </div>
+          <div class="divider"></div><div id="medicineList" class="list"></div>
+        </div>
+      </div>
+
+      <div id="viewFamily" class="view hidden">
+        <div class="page-heading"><span class="eyebrow">FAMILY HEALTH</span><h1>Family Health</h1><p>Keep important health information accessible for your loved ones.</p></div>
+        <div class="empty-state"><span>♧</span><h3>No family members added</h3><p>Add a family member to manage their health information.</p><button class="primary-btn small" id="addFamilyBtn">Add Family Member</button></div>
+      </div>
+
+      <div id="viewSettings" class="view hidden">
+        <div class="page-heading"><span class="eyebrow">ACCOUNT</span><h1>Settings</h1><p>Manage your account and preferences.</p></div>
+        <div class="panel settings-panel">
+          <h3>Account</h3>
+          <label>Full Name<input id="setName"></label>
+          <label>Email<input id="setEmail" type="email"></label>
+          <button class="primary-btn small" id="saveSettings">Save Changes</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../JS/i18n.js"></script>
+  <script src="../JS/script.js"></script>
+</body>
+</html>

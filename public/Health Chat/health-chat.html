@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedZyra | AI Health Check-in</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/health-chat.css">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <button class="back-btn" onclick="goBack()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="header-title">
+            <span id="headerTitle">Health Interview</span>
+            <small id="headerSubtitle">AI-assisted patient check-in</small>
+        </div>
+
+        <div class="progress-wrapper">
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <span id="stepText">Question 1</span>
+
+        </div>
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <span>MedZyra</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+        <!-- PATIENT BAR -->
+
+        <section class="patient-bar">
+
+            <div class="patient-info">
+
+                <div class="patient-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong id="patientName">Hello, Patient</strong>
+                    <span id="patientAge">Age not provided</span>
+                </div>
+
+            </div>
+
+
+            <!-- LANGUAGE -->
+
+            <div class="language-selector">
+
+                <i class="fa-solid fa-language"></i>
+
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+
+            </div>
+
+            <div class="language-selector interaction-selector">
+                <i class="fa-solid fa-hand-pointer"></i>
+                <select id="interactionModeSelect" aria-label="Interaction mode">
+                    <option value="text">Text</option>
+                    <option value="voice">Voice</option>
+                    <option value="touch">Touch</option>
+                </select>
+            </div>
+
+
+            <!-- QUESTION COUNTER -->
+
+            <div class="question-counter">
+
+                <span id="answeredCount">0</span>
+
+                <span>/</span>
+
+                <span id="totalQuestions">8</span>
+
+                    <small id="answeredLabel">answered</small>
+
+            </div>
+
+        </section>
+
+        <section class="conversation-guide" aria-label="Health conversation guide">
+            <div class="guide-icon"><i class="fa-solid fa-compass"></i></div>
+            <div>
+                <strong>We are building your health story</strong>
+                <p>Share what you notice, when it started, and how it affects you. MedZyra helps you prepare for a clinician; it does not diagnose or recommend medicines.</p>
+            </div>
+            <div class="guide-points">
+                <span><i class="fa-solid fa-check"></i> Symptoms</span>
+                <span><i class="fa-solid fa-check"></i> Timeline</span>
+                <span><i class="fa-solid fa-check"></i> Questions for your doctor</span>
+            </div>
+        </section>
+
+
+        <!-- ================= CHAT ================= -->
+
+        <section class="chat-area" id="chatArea">
+
+
+            <!-- WELCOME CARD -->
+
+            <div class="message-row bot-row">
+
+                <div class="bot-avatar">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+
+                <div class="message-content">
+
+                    <div class="bot-label">
+                        MedZyra AI
+                        <span id="onlineLabel">● Online</span>
+                    </div>
+
+                    <div class="message bot-message welcome-message">
+
+                        <div class="welcome-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+
+                        <div>
+
+                            <h3 id="welcomeTitle">Let's understand how you're feeling.</h3>
+
+                            <p id="welcomeText">
+                                I'll ask you a few simple questions before
+                                your consultation. You can
+                                <strong>type, tap, or speak</strong>
+                                your answers.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="privacy-note">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span id="privacyNote">Your answers are part of your health check-in.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- START BUTTON -->
+
+            <div class="start-row" id="startRow">
+
+                <button id="startChatBtn" class="start-button" onclick="startCheckIn()">
+
+                        <span id="startLabel">Start check-in</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- DYNAMIC CHAT MESSAGES -->
+
+            <div id="messages"></div>
+
+
+            <!-- TYPING INDICATOR -->
+
+            <div class="typing-indicator" id="typingIndicator">
+
+                <div class="bot-avatar small">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+
+                <div class="typing-bubble">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= RED FLAG ================= -->
+
+        <section class="red-flag-overlay" id="redFlagOverlay">
+
+            <div class="red-flag-card">
+
+                <div class="danger-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div class="danger-content">
+
+                    <span class="danger-label">
+                        URGENT ATTENTION
+                    </span>
+
+                    <h2>Possible warning sign detected</h2>
+
+                    <p id="redFlagMessage">
+                        Some symptoms you entered may require immediate
+                        attention from clinical staff.
+                    </p>
+
+                    <div class="danger-actions">
+
+                        <button
+                            class="alert-button"
+                            onclick="alertClinicalStaff()"
+                        >
+                            <i class="fa-solid fa-bell"></i>
+                            Quick support / upload records
+                        </button>
+
+                        <button
+                            class="continue-button"
+                            onclick="continueAfterFlag()"
+                        >
+                            Continue the interview
+                        </button>
+
+                    </div>
+
+                    <small>
+                        If you feel severely unwell, seek immediate
+                        medical assistance.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="discussion-panel" id="discussionPanel" aria-live="polite">
+            <div class="discussion-heading">
+                <div>
+                    <span class="discussion-kicker"><i class="fa-solid fa-comments"></i> PATIENT DISCUSSION</span>
+                    <h2>Make sense of your health story</h2>
+                    <p>Ask about your answers, unfamiliar terms, or what to bring up with your clinician.</p>
+                </div>
+                <button type="button" class="stop-discussion" onclick="stopDiscussion()"><i class="fa-solid fa-stop"></i> Stop and upload</button>
+            </div>
+            <div class="discussion-safety">
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>No diagnosis or medicine advice. The assistant only reflects what you shared and explains health words simply.</span>
+            </div>
+            <div class="discussion-focus" id="discussionFocus">
+                <span class="focus-label">CURRENT FOCUS</span>
+                <strong>Reported symptoms and health history</strong>
+            </div>
+            <div class="discussion-messages" id="discussionMessages"></div>
+            <div class="touch-prompts" id="touchPrompts">
+                <button type="button" data-prompt="What are the main points I shared?">Summarize my story</button>
+                <button type="button" data-prompt="Please explain any medical term in your last message in simple language.">Explain a term</button>
+                <button type="button" data-prompt="What should I ask my clinician about these symptoms?">Prepare for my visit</button>
+            </div>
+        </section>
+
+
+        <!-- ================= INPUT ================= -->
+
+        <footer class="input-area">
+
+            <div class="input-container">
+
+                <!-- Voice -->
+
+                <button
+                    class="voice-button"
+                    id="voiceButton"
+                    onclick="toggleVoice()"
+                    title="Speak your answer"
+                >
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </button>
+
+
+                <!-- Text -->
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Type your answer..."
+                    autocomplete="off"
+                    disabled
+                >
+
+
+                <!-- Send -->
+
+                <button
+                    class="send-button"
+                    id="sendButton"
+                    onclick="sendMessage()"
+                    disabled
+                >
+
+                    <i class="fa-solid fa-arrow-up"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="input-hint">
+
+                <span>
+                    <i class="fa-regular fa-keyboard"></i>
+                    <span id="typeHint">Type</span>
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-microphone"></i>
+                    <span id="speakHint">Speak</span>
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    <span id="tapHint">Tap options</span>
+                </span>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../JS/i18n.js"></script>
+<script src="../JS/health-chat.js"></script>
+
+</body>
+</html>

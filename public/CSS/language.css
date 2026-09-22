@@ -1,0 +1,1177 @@
+/* =====================================================
+   MEDZYRA LANGUAGE SELECTION
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #103f47;
+    background: #f7fffd;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.top-header {
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5.3%;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-bottom: 1px solid rgba(31, 157, 151, 0.12);
+
+    position: relative;
+    z-index: 20;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Brand */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+.brand-name {
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #123f48;
+}
+
+
+/* =====================================================
+   MEDICAL CROSS LOGO
+   ===================================================== */
+
+.brand-icon {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        145deg,
+        #079b91,
+        #18b9a9
+    );
+
+    position: relative;
+
+    box-shadow:
+        0 8px 20px rgba(0, 160, 150, 0.18);
+
+    overflow: hidden;
+}
+
+
+.plus-horizontal {
+    position: absolute;
+
+    width: 34px;
+    height: 9px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    left: 10px;
+    top: 22px;
+}
+
+
+.plus-vertical {
+    position: absolute;
+
+    width: 9px;
+    height: 34px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    left: 22px;
+    top: 10px;
+}
+
+
+.heartbeat {
+    position: absolute;
+
+    left: 11px;
+    top: 18px;
+
+    color: #0a9c91;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    transform: rotate(-3deg);
+}
+
+
+/* Header tagline */
+
+.header-tagline {
+    color: #607d84;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+   ===================================================== */
+
+.language-page {
+    min-height: calc(100vh - 92px);
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 58px 20px 70px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(210, 249, 242, 0.45),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f9fffe 0%,
+            #f2fcfa 100%
+        );
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+.language-container {
+    width: 100%;
+    max-width: 1080px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =====================================================
+   PROGRESS PILL
+   ===================================================== */
+
+.progress-pill {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 10px 19px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #cfeee9;
+
+    color: #07978f;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 18px rgba(22, 145, 137, 0.08);
+
+    margin-bottom: 21px;
+
+    animation: fadeDown 0.7s ease;
+}
+
+
+.sparkle {
+    font-size: 17px;
+
+    animation: sparkleAnimation 2s infinite ease-in-out;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.language-container h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 600;
+
+    color: #0b3943;
+
+    margin-bottom: 17px;
+
+    animation: fadeUp 0.7s ease;
+}
+
+
+.language-container h1 span {
+    color: #079a91;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   SUBTITLE
+   ===================================================== */
+
+.subtitle {
+    color: #617b82;
+
+    font-size: 19px;
+
+    line-height: 1.55;
+
+    margin-bottom: 48px;
+
+    animation: fadeUp 0.9s ease;
+}
+
+
+/* =====================================================
+   LANGUAGE OPTIONS
+   ===================================================== */
+
+.language-options {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin: 0 auto;
+
+    animation: cardsAppear 1s ease;
+}
+
+
+/* =====================================================
+   LANGUAGE CARD
+   ===================================================== */
+
+.language-card {
+    height: 225px;
+
+    border-radius: 15px;
+
+    border: 2px solid #cde5e2;
+
+    background: rgba(255, 255, 255, 0.48);
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+    color: #123f48;
+}
+
+
+/* Hover */
+
+.language-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #80ccc5;
+
+    background: rgba(239, 253, 250, 0.8);
+
+    box-shadow:
+        0 14px 35px rgba(20, 145, 136, 0.10);
+}
+
+
+/* Selected */
+
+.language-card.selected {
+    border-color: #08a79d;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(225, 251, 247, 0.95),
+            rgba(246, 255, 253, 0.95)
+        );
+
+    box-shadow:
+        0 12px 35px rgba(8, 167, 157, 0.13);
+}
+
+
+/* =====================================================
+   LANGUAGE SYMBOL
+   ===================================================== */
+
+.language-symbol {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #def6f1;
+
+    color: #078c85;
+
+    font-size: 34px;
+
+    margin-bottom: 17px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.language-card:hover .language-symbol {
+    transform: scale(1.08);
+}
+
+
+.english-symbol {
+    font-family: Arial, sans-serif;
+
+    font-size: 39px;
+
+    font-weight: 300;
+}
+
+
+/* Bengali */
+
+.bengali-text,
+.hindi-text {
+    font-family:
+        "Noto Sans Bengali",
+        "Noto Sans Devanagari",
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =====================================================
+   LANGUAGE NAME
+   ===================================================== */
+
+.language-name {
+    font-size: 27px;
+
+    font-weight: 600;
+
+    color: #0d3e48;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+
+/* Small English name */
+
+.language-english {
+    font-size: 15px;
+
+    color: #638089;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   CHECKMARK
+   ===================================================== */
+
+.selected-check {
+    position: absolute;
+
+    right: 13px;
+    top: 13px;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #08ada3;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    opacity: 0;
+
+    transform: scale(0.5);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.language-card.selected .selected-check {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+   ===================================================== */
+
+.continue-button {
+    margin-top: 60px;
+
+    width: 285px;
+    height: 66px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #08a69d,
+            #12afa6
+        );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    box-shadow:
+        0 13px 27px rgba(8, 166, 157, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.continue-button:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 17px 32px rgba(8, 166, 157, 0.30);
+}
+
+
+.continue-button:active {
+    transform: scale(0.96);
+}
+
+
+.arrow {
+    font-size: 27px;
+
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+
+.continue-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   DECORATIVE PLUS
+   ===================================================== */
+
+.decor-plus {
+    position: absolute;
+
+    color: rgba(48, 190, 175, 0.11);
+
+    font-size: 80px;
+
+    font-weight: 300;
+
+    z-index: 1;
+}
+
+
+.decor-plus-left {
+    left: 7%;
+    top: 70px;
+}
+
+
+/* =====================================================
+   DECORATIVE HEART
+   ===================================================== */
+
+.decor-heart {
+    position: absolute;
+
+    right: 7%;
+    top: 75px;
+
+    color: rgba(35, 176, 163, 0.16);
+
+    font-size: 105px;
+
+    line-height: 1;
+
+    font-family: Arial, sans-serif;
+
+    z-index: 1;
+}
+
+
+.decor-heart span {
+    position: absolute;
+
+    font-size: 70px;
+
+    left: 19px;
+    top: 22px;
+
+    transform: rotate(-5deg);
+
+    color: rgba(35, 176, 163, 0.18);
+}
+
+
+/* =====================================================
+   DECORATIVE CIRCLES
+   ===================================================== */
+
+.decor-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(68, 196, 183, 0.06);
+}
+
+
+.circle-left {
+    width: 250px;
+    height: 250px;
+
+    left: -145px;
+    top: 130px;
+}
+
+
+.circle-right {
+    width: 270px;
+    height: 270px;
+
+    right: -155px;
+    top: 170px;
+}
+
+
+/* =====================================================
+   LEAVES
+   ===================================================== */
+
+.leaf-decoration {
+    position: absolute;
+
+    bottom: -25px;
+
+    width: 190px;
+    height: 230px;
+
+    z-index: 2;
+
+    opacity: 0.75;
+}
+
+
+.left-leaves {
+    left: 0;
+}
+
+
+.right-leaves {
+    right: 0;
+
+    transform: scaleX(-1);
+}
+
+
+.leaf {
+    position: absolute;
+
+    display: block;
+
+    width: 45px;
+    height: 90px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            140deg,
+            rgba(55, 183, 170, 0.25),
+            rgba(22, 147, 139, 0.65)
+        );
+
+    transform-origin: bottom center;
+}
+
+
+.leaf-1 {
+    bottom: 0;
+    left: 35px;
+
+    height: 135px;
+
+    transform: rotate(-27deg);
+}
+
+
+.leaf-2 {
+    bottom: 25px;
+    left: 5px;
+
+    height: 105px;
+
+    transform: rotate(-53deg);
+}
+
+
+.leaf-3 {
+    bottom: 20px;
+    left: 83px;
+
+    height: 105px;
+
+    transform: rotate(22deg);
+}
+
+
+.leaf-4 {
+    bottom: 80px;
+    left: 50px;
+
+    height: 85px;
+
+    transform: rotate(-3deg);
+}
+
+
+.leaf-5 {
+    bottom: 105px;
+    left: 105px;
+
+    height: 65px;
+
+    transform: rotate(35deg);
+
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   QUOTE
+   ===================================================== */
+
+.health-quote {
+    position: absolute;
+
+    right: 11%;
+
+    bottom: 43px;
+
+    color: #079b92;
+
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
+
+    font-size: 21px;
+
+    transform: rotate(-7deg);
+
+    text-align: left;
+
+    z-index: 4;
+}
+
+
+.health-quote span {
+    display: block;
+}
+
+
+.health-quote span:last-child {
+    margin-left: 25px;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes cardsAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes sparkleAnimation {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25) rotate(10deg);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .top-header {
+        padding: 0 30px;
+    }
+
+    .language-options {
+        gap: 15px;
+    }
+
+    .language-card {
+        height: 205px;
+    }
+
+    .language-name {
+        font-size: 23px;
+    }
+
+    .health-quote {
+        right: 5%;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .top-header {
+        height: 75px;
+
+        padding: 0 20px;
+    }
+
+
+    .brand {
+        gap: 10px;
+    }
+
+
+    .brand-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .plus-horizontal {
+        width: 27px;
+        height: 7px;
+
+        left: 8px;
+        top: 17px;
+    }
+
+
+    .plus-vertical {
+        width: 7px;
+        height: 27px;
+
+        left: 17px;
+        top: 8px;
+    }
+
+
+    .heartbeat {
+        left: 8px;
+        top: 14px;
+
+        font-size: 18px;
+    }
+
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+
+    .header-tagline {
+        display: none;
+    }
+
+
+    .language-page {
+        min-height: calc(100vh - 75px);
+
+        padding:
+            42px 15px
+            65px;
+    }
+
+
+    .progress-pill {
+        font-size: 13px;
+
+        padding: 8px 15px;
+    }
+
+
+    .language-container h1 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .subtitle {
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        margin-bottom: 35px;
+    }
+
+
+    .desktop-break {
+        display: none;
+    }
+
+
+    /* Keep cards SIDE BY SIDE */
+
+    .language-options {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        width: 100%;
+    }
+
+
+    .language-card {
+        height: 155px;
+
+        padding: 10px 5px;
+
+        border-radius: 12px;
+    }
+
+
+    .language-symbol {
+        width: 42px;
+        height: 42px;
+
+        font-size: 23px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .english-symbol {
+        font-size: 27px;
+    }
+
+
+    .language-name {
+        font-size: 16px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .language-english {
+        font-size: 11px;
+    }
+
+
+    .selected-check {
+        width: 22px;
+        height: 22px;
+
+        right: 6px;
+        top: 6px;
+
+        font-size: 12px;
+    }
+
+
+    .continue-button {
+        width: min(285px, 90%);
+
+        height: 58px;
+
+        margin-top: 42px;
+
+        font-size: 16px;
+    }
+
+
+    .arrow {
+        font-size: 23px;
+    }
+
+
+    .decor-plus {
+        font-size: 55px;
+    }
+
+
+    .decor-plus-left {
+        left: 3%;
+        top: 50px;
+    }
+
+
+    .decor-heart {
+        right: 0;
+        top: 70px;
+
+        font-size: 70px;
+    }
+
+
+    .decor-heart span {
+        font-size: 48px;
+
+        left: 12px;
+        top: 14px;
+    }
+
+
+    .circle-left {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    .circle-right {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    .health-quote {
+        right: 20px;
+
+        bottom: 22px;
+
+        font-size: 16px;
+    }
+
+
+    .leaf-decoration {
+        transform: scale(0.65);
+
+        transform-origin: bottom left;
+    }
+
+
+    .right-leaves {
+        transform:
+            scaleX(-1)
+            scale(0.65);
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .language-container h1 {
+        font-size: 36px;
+    }
+
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+
+    .language-options {
+        gap: 5px;
+    }
+
+
+    .language-card {
+        height: 145px;
+    }
+
+
+    .language-symbol {
+        width: 38px;
+        height: 38px;
+
+        font-size: 20px;
+    }
+
+
+    .english-symbol {
+        font-size: 24px;
+    }
+
+
+    .language-name {
+        font-size: 14px;
+    }
+
+
+    .language-english {
+        font-size: 10px;
+    }
+
+
+    .selected-check {
+        width: 19px;
+        height: 19px;
+
+        font-size: 10px;
+    }
+
+
+    .health-quote {
+        display: none;
+    }
+}

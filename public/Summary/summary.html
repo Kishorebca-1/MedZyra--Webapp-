@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedZyra - AI Health Summary</title>
+
+    <link rel="stylesheet" href="../CSS/summary.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+     HEADER
+========================================= -->
+
+    <header class="top-header">
+
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✚
+            </div>
+
+            <span>
+                MedZyra
+            </span>
+
+        </div>
+
+
+
+        <div class="header-right">
+
+            <span>
+                Your health. Our priority.
+            </span>
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+     MAIN
+========================================= -->
+
+    <main class="page-container">
+
+
+        <!-- Heading -->
+
+        <section class="page-heading">
+
+
+            <div class="small-badge">
+                ✨ &nbsp; AI Health Summary
+            </div>
+
+
+            <h1>
+                Your Complete Health Journey
+            </h1>
+
+
+            <p>
+                MedZyra has organized the information you provided
+                <br>
+                into one clear summary for your doctor.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+         AI STATUS
+    ====================================== -->
+
+        <div class="ai-status">
+
+            <div class="ai-status-icon">
+                ✨
+            </div>
+
+
+            <div>
+
+                <strong id="summaryStatusTitle">
+                    No Summary Yet
+                </strong>
+
+                <p id="summaryStatusText">
+                    Based only on the information you provided.
+                </p>
+
+            </div>
+
+
+            <div class="evidence-lock">
+                🔒 Evidence Locked
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+         PATIENT OVERVIEW
+    ====================================== -->
+
+        <section class="summary-card">
+
+
+            <div class="card-heading">
+
+                <div class="card-heading-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <span>
+                        PATIENT OVERVIEW
+                    </span>
+
+                    <h2>
+                        Basic Information
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="patient-grid">
+
+
+                <div class="patient-item">
+
+                    <small>
+                        Patient Name
+                    </small>
+
+                    <strong id="patientName">
+                        Not provided
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-item">
+
+                    <small>
+                        Age
+                    </small>
+
+                    <strong id="patientAge">
+                        Not provided
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-item">
+
+                    <small>
+                        Role
+                    </small>
+
+                    <strong id="patientRole">
+                        Patient
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-item">
+
+                    <small>
+                        Selected Language
+                    </small>
+
+                    <strong id="patientLanguage">
+                        English
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+         AI OVERVIEW
+    ====================================== -->
+
+        <section class="main-ai-card">
+
+
+            <div class="ai-heading">
+
+                <div class="large-ai-icon">
+                    ✨
+                </div>
+
+                <div>
+
+                    <span>
+                        AI GENERATED OVERVIEW
+                    </span>
+
+                    <h2>
+                        Your Health Story
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="ai-summary-text">
+
+                <p id="overallSummary">
+
+                    No health summary is available yet. Complete an interview or upload a medical document to begin.
+
+                </p>
+
+            </div>
+
+            <div class="next-step-panel" id="nextStepPanel">
+                <div class="next-step-icon">→</div>
+                <div>
+                    <span>YOUR NEXT STEP</span>
+                    <strong id="nextStepText">Complete an interview or upload a medical document to begin.</strong>
+                </div>
+            </div>
+
+
+
+            <!-- AI key points -->
+
+            <div class="key-information">
+
+
+                <div class="key-information-title">
+
+                    <h3>
+                        Key Information Collected
+                    </h3>
+
+                    <span>
+                        Evidence based
+                    </span>
+
+                </div>
+
+
+                <div class="key-grid">
+
+
+                    <div class="key-box">
+
+                        <div class="key-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Documents
+                            </small>
+
+                            <strong id="summaryDocuments">
+                                0 uploaded
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="key-box">
+
+                        <div class="key-icon">
+                            🧪
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Laboratory Reports
+                            </small>
+
+                            <strong id="summaryLabs">
+                                Not documented
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="key-box">
+
+                        <div class="key-icon">
+                            💊
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Prescriptions
+                            </small>
+
+                            <strong id="summaryPrescriptions">
+                                Not documented
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="key-box">
+
+                        <div class="key-icon">
+                            🧠
+                        </div>
+
+                        <div>
+
+                            <small>
+                                AI Analyses
+                            </small>
+
+                            <strong id="summaryAI">
+                                0 completed
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+         MEDICAL JOURNEY
+    ====================================== -->
+
+        <section class="summary-card">
+
+
+            <div class="card-heading">
+
+                <div class="card-heading-icon">
+                    ◷
+                </div>
+
+                <div>
+
+                    <span>
+                        MEDICAL JOURNEY
+                    </span>
+
+                    <h2>
+                        Everything You Have Done
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="journey-list" id="journeyList">
+
+                <!-- JavaScript adds actions -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+         DOCUMENTS
+    ====================================== -->
+
+        <section class="summary-card">
+
+
+            <div class="card-heading">
+
+                <div class="card-heading-icon">
+                    📁
+                </div>
+
+                <div>
+
+                    <span>
+                        DOCUMENT RECORD
+                    </span>
+
+                    <h2>
+                        Submitted Documents
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="document-summary-list" id="documentSummaryList">
+
+                <!-- JavaScript -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+         IMPORTANT NOTICE
+    ====================================== -->
+
+        <section class="notice-card">
+
+
+            <div class="notice-icon">
+                🔒
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Evidence-Locked Summary
+                </strong>
+
+                <p>
+                    This summary only uses information provided by you
+                    or extracted from your uploaded documents.
+                    Information that was not provided is marked
+                    as "Not documented". MedZyra does not replace
+                    your doctor's clinical judgment.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+         FINAL ACTIONS
+    ====================================== -->
+
+        <div class="navigation">
+
+
+            <button class="back-button" onclick="goBack()">
+                ← &nbsp; Back
+            </button>
+
+
+
+            <div class="health-message">
+
+                Your health<br>
+
+                <span>
+                    matters.
+                </span>
+
+            </div>
+
+
+
+            <button class="consult-button" onclick="continueToDoctor()">
+
+                Continue to Consultation
+                &nbsp; →
+
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <script src="../JS/i18n.js"></script>
+    <script src="../JS/summary.js"></script>
+
+</body>
+
+</html>

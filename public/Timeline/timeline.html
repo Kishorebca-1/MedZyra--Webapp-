@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedZyra - Medical Timeline</title>
+
+    <link rel="stylesheet" href="../CSS/timeline.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+     HEADER
+===================================== -->
+
+    <header class="top-header">
+
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✚
+            </div>
+
+            <span>MedZyra</span>
+
+        </div>
+
+
+
+
+
+        <!-- Right -->
+
+        <div class="header-right">
+
+            <span>
+                Your health. Our priority.
+            </span>
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+     MAIN
+===================================== -->
+
+    <main class="page-container">
+
+        <!-- Decorative medical plus -->
+        <div class="decor-plus decor-plus-left">
+            +
+        </div>
+
+        <!-- Decorative heart -->
+        <div class="decor-heart">
+            ♡
+            <span>⌁</span>
+        </div>
+
+        <!-- Decorative circles -->
+        <div class="decor-circle circle-left"></div>
+        <div class="decor-circle circle-right"></div>
+
+
+        <!-- Heading -->
+
+        <section class="page-heading">
+
+            <div class="small-badge">
+                ◷ &nbsp; Your Medical Journey
+            </div>
+
+
+            <h1>
+                Medical Timeline
+            </h1>
+
+
+            <p>
+                See everything you have submitted and completed
+                <br>
+                during your MedZyra journey.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+         SUMMARY CARDS
+    ===================================== -->
+
+        <section class="overview-cards">
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon">
+                    📄
+                </div>
+
+                <div>
+
+                    <span>
+                        Documents
+                    </span>
+
+                    <strong id="documentCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Completed Actions
+                    </span>
+
+                    <strong id="actionCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon">
+                    ✨
+                </div>
+
+                <div>
+
+                    <span>
+                        AI Analyses
+                    </span>
+
+                    <strong id="aiCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+         TIMELINE
+    ===================================== -->
+
+        <section class="timeline-card">
+
+
+            <div class="timeline-header">
+
+                <div>
+
+                    <span class="timeline-label">
+                        YOUR ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+
+                </div>
+
+
+                <button class="clear-button" id="clearTimeline" title="Clears the local browser view only">
+                    Clear Local View
+                </button>
+
+            </div>
+
+
+
+            <!-- Filters -->
+
+            <div class="timeline-filters">
+
+                <button class="filter active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter" data-filter="document">
+                    Documents
+                </button>
+
+                <button class="filter" data-filter="ai">
+                    AI
+                </button>
+
+                <button class="filter" data-filter="action">
+                    Actions
+                </button>
+
+            </div>
+
+
+
+            <!-- Timeline -->
+
+            <div class="timeline" id="timeline">
+
+                <!-- JavaScript adds events -->
+
+            </div>
+
+
+
+            <!-- Empty -->
+
+            <div class="timeline-empty" id="timelineEmpty">
+
+                <div class="empty-icon">
+                    ◷
+                </div>
+
+                <h3>
+                    No activity yet
+                </h3>
+
+                <p>
+                    Your medical actions and uploaded documents
+                    will appear here.
+                </p>
+
+
+                <button onclick="goToDocuments()">
+                    Upload a Document
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+         BOTTOM
+    ===================================== -->
+
+        <section class="timeline-note">
+
+            <div class="note-icon">
+                🔒
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Your medical activity is organized securely
+                </strong>
+
+                <p>
+                    MedZyra keeps track of the actions you take
+                    so your medical journey remains organized
+                    and easy to review.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <button class="back-button" onclick="goBack()">
+                ← &nbsp; Back
+            </button>
+
+
+            <div class="health-message">
+
+                Your health<br>
+
+                <span>
+                    matters.
+                </span>
+
+            </div>
+
+
+            <button class="continue-button" onclick="continuePage()">
+                Continue &nbsp; →
+            </button>
+
+        </div>
+
+
+        <!-- ================= DECORATIVE LEAVES ================= -->
+        <div class="leaf-decoration left-leaves">
+            <span class="leaf leaf-1"></span>
+            <span class="leaf leaf-2"></span>
+            <span class="leaf leaf-3"></span>
+            <span class="leaf leaf-4"></span>
+            <span class="leaf leaf-5"></span>
+        </div>
+
+        <div class="leaf-decoration right-leaves">
+            <span class="leaf leaf-1"></span>
+            <span class="leaf leaf-2"></span>
+            <span class="leaf leaf-3"></span>
+            <span class="leaf leaf-4"></span>
+        </div>
+
+
+    </main>
+
+
+
+    <script src="../JS/i18n.js"></script>
+    <script src="../JS/timeline.js"></script>
+
+</body>
+
+</html>

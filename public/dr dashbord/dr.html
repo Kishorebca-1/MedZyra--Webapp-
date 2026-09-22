@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedZyra | Doctor Registration</title>
+    <link rel="stylesheet" href="../CSS/dr1.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- LEFT PANEL -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <span>✚</span> MedZyra
+            </div>
+
+            <p class="tag">FOR HEALTHCARE PROFESSIONALS</p>
+
+            <h1>
+                Empowering Doctors.<br>
+                <span>Improving Healthcare.</span>
+            </h1>
+
+            <p class="hero-text">
+                Join MedZyra and connect with patients through
+                smarter, faster and more organized healthcare.
+            </p>
+
+            <div class="doctor-card">
+                <div class="doctor-icon">🩺</div>
+                <div>
+                    <strong>Doctor Portal</strong>
+                    <p>Manage patients, appointments & consultations</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+    </section>
+
+
+    <!-- RIGHT PANEL -->
+    <section class="form-section">
+
+        <div class="form-card">
+
+            <div class="form-header">
+                <p class="small-title">DOCTOR REGISTRATION</p>
+                <h2>Create your professional profile</h2>
+                <p>Enter your professional and contact details.</p>
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress">
+                <div class="progress-step active">
+                    <span>1</span>
+                    <p>Personal</p>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step active">
+                    <span>2</span>
+                    <p>Professional</p>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+                    <span>3</span>
+                    <p>Account</p>
+                </div>
+            </div>
+
+
+            <form id="doctorForm">
+
+                <!-- PERSONAL INFORMATION -->
+                <div class="section-title">
+                    <span>01</span>
+                    Personal Information
+                </div>
+
+                <div class="grid">
+
+                    <div class="field full">
+                        <label>Doctor's Full Name *</label>
+                        <input type="text" id="doctorName"
+                               placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Medical Registration Number *</label>
+                        <input type="text" id="registrationNumber"
+                               placeholder="e.g. WBMC123456" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="phone"
+                               placeholder="10-digit mobile number"
+                               maxlength="10" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Email Address *</label>
+                        <input type="email" id="email"
+                               placeholder="doctor@example.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label>City *</label>
+                        <input type="text" id="city"
+                               placeholder="Enter city" required>
+                    </div>
+
+                </div>
+
+
+                <!-- PROFESSIONAL INFORMATION -->
+                <div class="section-title">
+                    <span>02</span>
+                    Professional Information
+                </div>
+
+                <div class="grid">
+
+                    <div class="field">
+                        <label>Degree / Qualification *</label>
+                        <input type="text" id="qualification"
+                               placeholder="e.g. MBBS, MD, MS" required>
+                    </div>
+
+                    <div class="field">
+                        <label>University / Institution</label>
+                        <input type="text" id="institution"
+                               placeholder="Enter institution">
+                    </div>
+
+                    <div class="field">
+                        <label>Year of Graduation</label>
+                        <input type="number" id="graduationYear"
+                               placeholder="e.g. 2018"
+                               min="1950" max="2030">
+                    </div>
+
+                    <div class="field">
+                        <label>Years of Experience *</label>
+                        <input type="number" id="experience"
+                               placeholder="e.g. 5"
+                               min="0" max="70" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Specialization *</label>
+                        <select id="specialization" required>
+                            <option value="">Select specialization</option>
+                            <option>General Physician</option>
+                            <option>Cardiologist</option>
+                            <option>Dermatologist</option>
+                            <option>Neurologist</option>
+                            <option>Orthopedic</option>
+                            <option>Pediatrician</option>
+                            <option>Gynecologist</option>
+                            <option>Psychiatrist</option>
+                            <option>ENT Specialist</option>
+                            <option>Ophthalmologist</option>
+                            <option>Oncologist</option>
+                            <option>Dentist</option>
+                            <option>Surgeon</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Patients Treated</label>
+                        <input type="number" id="patients"
+                               placeholder="Approx. number"
+                               min="0">
+                    </div>
+
+                    <div class="field full">
+                        <label>Areas of Expertise</label>
+                        <textarea id="expertise"
+                                  placeholder="e.g. Diabetes management, hypertension, preventive care"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label>Hospital / Clinic Affiliation</label>
+                        <input type="text" id="hospital"
+                               placeholder="Hospital or clinic name">
+                    </div>
+
+                    <div class="field">
+                        <label>Languages Spoken</label>
+                        <input type="text" id="languages"
+                               placeholder="e.g. English, Hindi, Bengali">
+                    </div>
+
+                </div>
+
+
+                <!-- CONSULTATION -->
+                <div class="section-title">
+                    <span>03</span>
+                    Consultation Details
+                </div>
+
+                <div class="grid">
+
+                    <div class="field">
+                        <label>Consultation Type *</label>
+                        <select id="consultationType" required>
+                            <option value="">Select type</option>
+                            <option>Video Consultation</option>
+                            <option>Hospital Visit</option>
+                            <option>Both</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Consultation Fee (₹)</label>
+                        <input type="number" id="fee"
+                               placeholder="e.g. 500"
+                               min="0">
+                    </div>
+
+                    <div class="field full">
+                        <label>Availability</label>
+                        <input type="text" id="availability"
+                               placeholder="e.g. Mon-Sat, 10 AM - 5 PM">
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT -->
+                <div class="section-title">
+                    <span>04</span>
+                    Account Security
+                </div>
+
+                <div class="grid">
+
+                    <div class="field">
+                        <label>Password *</label>
+                        <div class="password-box">
+                            <input type="password" id="password"
+                                   placeholder="Minimum 6 characters" required>
+                            <button type="button" id="togglePassword">Show</button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Confirm Password *</label>
+                        <input type="password" id="confirmPassword"
+                               placeholder="Re-enter password" required>
+                    </div>
+
+                </div>
+
+
+                <label class="check">
+                    <input type="checkbox" id="terms" required>
+                    <span>
+                        I confirm that the professional information provided
+                        is accurate and I agree to MedZyra's terms.
+                    </span>
+                </label>
+
+
+                <button type="submit" class="register-btn">
+                    Create Doctor Account →
+                </button>
+
+                <p class="login-text">
+                    Already registered?
+                    <a href="../dr-dashboard/dr-dashboard.html" id="doctorLogin">Login here</a>
+                </p>
+
+            </form>
+
+
+            <!-- SUCCESS -->
+            <div id="successBox" class="success-box">
+
+                <div class="success-icon">✓</div>
+
+                <h2>Registration Submitted!</h2>
+
+                <p>
+                    Your doctor profile has been created successfully.
+                    Your professional credentials can now be verified
+                    by the hospital/MedZyra administration.
+                </p>
+
+                <div class="verification">
+                    <span>Verification Status</span>
+                    <strong>Pending Verification</strong>
+                </div>
+
+                <button onclick="location.href='../dr-dashboard/dr-dashboard.html'" class="register-btn">
+                    Open Doctor Dashboard
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script src="../JS/i18n.js"></script>
+<script src="../JS/dr2.js"></script>
+
+</body>
+</html>
