@@ -151,14 +151,18 @@ const sendOTP = async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Send OTP Error:", error);
-
         if (error.code === "OTP_RATE_LIMITED") {
+            const retryAfterSeconds = Number(error.retryAfterSeconds) || 60;
+            console.warn(`OTP request rate-limited; retry after ${retryAfterSeconds} seconds.`);
+            res.set("Retry-After", String(retryAfterSeconds));
             return res.status(429).json({
                 success: false,
-                message: error.message
+                message: error.message,
+                retryAfterSeconds
             });
         }
+
+        console.error("Send OTP Error:", error);
 
         return res.status(500).json({
             success: false,

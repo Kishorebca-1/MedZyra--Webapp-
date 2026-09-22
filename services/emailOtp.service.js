@@ -26,6 +26,7 @@ async function createOtp(email) {
             const waitSeconds = Math.ceil(RESEND_INTERVAL_SECONDS - elapsedSeconds);
             const error = new Error(`Please wait ${waitSeconds} seconds before requesting another OTP`);
             error.code = "OTP_RATE_LIMITED";
+            error.retryAfterSeconds = waitSeconds;
             throw error;
         }
     }
